@@ -687,20 +687,6 @@ p {
     transform: translateY(-3px);
 }
 
-/* Force Font Awesome icons to display */
-.icon:before {
-    display: inline-block !important;
-    font-family: "Font Awesome 5 Free", "Font Awesome 5 Brands" !important;
-    font-weight: 900;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-}
-
-.icon.brands:before {
-    font-weight: 400 !important;
-    font-family: "Font Awesome 5 Brands" !important;
-}
-
 /* ==========================================================================
    Images
    ========================================================================== */
@@ -716,20 +702,6 @@ p {
 .image.main img {
     width: 100%;
     height: auto;
-    display: block;
-}
-
-/* ==========================================================================
-   Article States
-   ========================================================================== */
-
-/* Initially hide all articles except when shown */
-#main article {
-    display: block;
-}
-
-/* Make sure articles are visible by default for static layout */
-body.is-article-visible #main article {
     display: block;
 }
 
