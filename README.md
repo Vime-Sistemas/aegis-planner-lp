@@ -61,14 +61,21 @@ aegis-planner-lp/
 ├── README.md
 ├── assets/
 │   ├── css/
-│   │   └── main.css
-│   └── js/
-│       ├── main.js
-│       ├── jquery.min.js
-│       ├── browser.min.js
-│       ├── breakpoints.min.js
-│       └── util.js
+│   │   ├── main.css
+│   │   ├── fontawesome-all.min.css
+│   │   └── noscript.css
+│   ├── js/
+│   │   ├── main.js
+│   │   ├── browser.min.js
+│   │   ├── breakpoints.min.js
+│   │   └── util.js
+│   └── webfonts/
+│       ├── fa-brands-400.*
+│       ├── fa-regular-400.*
+│       └── fa-solid-900.*
 ```
+
+**Nota**: jQuery é carregado via CDN (https://code.jquery.com/jquery-3.6.0.min.js)
 
 ## 🚀 Como Usar
 
@@ -149,11 +156,20 @@ Adicione imagens nas seguintes pastas:
 
 ### Melhorias Recomendadas
 1. **Imagens**: Otimize e comprima todas as imagens
-2. **CDN**: Use CDN para jQuery e Font Awesome
-3. **Minificação**: Minifique CSS e JS para produção
-4. **Cache**: Configure cache headers no servidor
-5. **Sitemap**: Crie sitemap.xml
-6. **Schema**: Adicione marcação de dados estruturados
+2. **Minificação**: Minifique CSS e JS para produção
+3. **Cache**: Configure cache headers no servidor
+4. **Sitemap**: Crie sitemap.xml
+5. **Schema**: Adicione marcação de dados estruturados
+
+### ✅ Dependências Externas
+- **jQuery**: Carregado via CDN (jQuery 3.6.0)
+- **Font Awesome**: Versão local completa (fontawesome-all.min.css + webfonts)
+- **Google Fonts**: Inter carregada via CDN
+
+### 🎨 Ícones e Fontes
+- **Font Awesome**: Incluído localmente com todos os arquivos de fonte
+- **Ícones**: Totalmente funcionais (solid, brands, regular)
+- **Webfonts**: Arquivos .woff, .woff2, .ttf, .eot e .svg incluídos
 
 ## 🎯 Conversão
 

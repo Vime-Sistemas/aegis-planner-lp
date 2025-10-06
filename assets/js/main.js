@@ -176,12 +176,13 @@
 	$main.children('article').each(function() {
 		var $this = $(this);
 
+		// Remove close button functionality for this layout
 		// Close.
-		$('<div class="close">✕</div>')
-			.appendTo($this)
-			.on('click', function() {
-				location.hash = '';
-			});
+		// $('<div class="close">✕</div>')
+		// 	.appendTo($this)
+		// 	.on('click', function() {
+		// 		location.hash = '';
+		// 	});
 
 		// Prevent clicks from inside article from bubbling.
 		$this.on('click', function(event) {
@@ -250,6 +251,11 @@
 		var target = $(this.getAttribute('href'));
 		if (target.length) {
 			event.preventDefault();
+			
+			// Show the target article
+			$main._show(this.getAttribute('href').substr(1));
+			
+			// Optional: smooth scroll to article
 			$('html, body').stop().animate({
 				scrollTop: target.offset().top - 100
 			}, 600);

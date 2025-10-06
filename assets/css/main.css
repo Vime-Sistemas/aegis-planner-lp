@@ -148,10 +148,10 @@ body {
 }
 
 #header nav {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 #header nav ul {
@@ -163,6 +163,7 @@ body {
     border-radius: var(--border-radius-large);
     backdrop-filter: blur(10px);
     box-shadow: 0 5px 20px var(--color-shadow);
+    margin: 0;
 }
 
 #header nav ul li a {
@@ -198,6 +199,12 @@ body {
     transform: translateY(20px);
     opacity: 0;
     animation: slideInUp 0.8s ease forwards;
+    position: relative;
+}
+
+/* Hide close buttons */
+#main article .close {
+    display: none !important;
 }
 
 @keyframes slideInUp {
@@ -418,6 +425,14 @@ p {
     border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
+.pricing-card.featured .plan-header h3 {
+    color: var(--color-white);
+}
+
+.pricing-card.featured .amount {
+    color: var(--color-white);
+}
+
 .popular-badge {
     background: var(--color-success);
     color: var(--color-white);
@@ -542,6 +557,30 @@ p {
 
 .actions input[type="submit"] {
     cursor: pointer;
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    font-size: 1rem;
+    text-align: center;
+    font-family: inherit;
+}
+
+.actions input[type="submit"]:hover {
+    background: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px var(--color-shadow);
+}
+
+.actions input[type="submit"].primary {
+    background: var(--color-primary);
+    color: var(--color-white);
 }
 
 /* ==========================================================================
@@ -648,6 +687,20 @@ p {
     transform: translateY(-3px);
 }
 
+/* Force Font Awesome icons to display */
+.icon:before {
+    display: inline-block !important;
+    font-family: "Font Awesome 5 Free", "Font Awesome 5 Brands" !important;
+    font-weight: 900;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.icon.brands:before {
+    font-weight: 400 !important;
+    font-family: "Font Awesome 5 Brands" !important;
+}
+
 /* ==========================================================================
    Images
    ========================================================================== */
@@ -663,6 +716,20 @@ p {
 .image.main img {
     width: 100%;
     height: auto;
+    display: block;
+}
+
+/* ==========================================================================
+   Article States
+   ========================================================================== */
+
+/* Initially hide all articles except when shown */
+#main article {
+    display: block;
+}
+
+/* Make sure articles are visible by default for static layout */
+body.is-article-visible #main article {
     display: block;
 }
 
@@ -698,6 +765,10 @@ p {
     
     #header .content .inner p {
         font-size: 1.1rem;
+    }
+    
+    #header nav {
+        margin-top: 1rem;
     }
     
     #header nav ul {
